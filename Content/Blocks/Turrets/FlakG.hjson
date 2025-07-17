@@ -1,0 +1,71 @@
+type: ItemTurret
+name: flak-artillery
+localizedName: flak artillery (ground and air version)
+description: both flak artillery 
+
+size: 3
+shootSound: artillery
+reload: 400
+range: 350
+health: 320
+category: turret
+shoot: {
+shots: 1
+firstShotDelay: 60
+}
+
+requirements: [
+  copper/150
+  lead/120
+  thorium/90
+]
+
+research: {
+  parent: NUKE
+  requirements: [
+    copper/300
+    thorium/120
+  ]
+}
+
+ammoTypes: {
+  blast-compound: {
+    type: FlakBulletType
+    speed: 7.5
+    damage: 200
+    lifetime: 200
+    width: 10
+    height: 40
+    sprite: missile-large
+    splashDamage: 100
+    splashDamageRadius: 78
+    status: blasted
+    shake: 50
+    knockBack: 10
+    recoil: 10
+    hitSound: explosion
+    hitEffect: mineImpact
+    despawnEffect: instBomb
+    hitColor: ff8500
+    collidesGround: true
+  }
+}
+drawer: {
+  type: DrawTurret
+  basePrefix: FlakG-
+    parts: [
+    {
+      type: RecoilPart
+      suffix: -fass
+      progress: recoil
+      moveY: -7
+      heatColor: FFBF00
+      under: true
+    }
+    {
+     type: RegionPart
+     suffix: -back
+     progress: recoil
+    }
+  ]
+}

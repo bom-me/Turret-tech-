@@ -1,0 +1,169 @@
+type: ItemTurret
+name: "cts"
+localizedName: "C.T.S"
+description: "C.T.S is Capsule Torpedo Striker — an interesting turret that launches torpedoes. The back uses resources, the front uses liquid. Combos:\n- water + surge-alloy\n- oil + pyratite\n- cryo + blast-compound"
+ammoUseEffect: instHit
+
+size: 4
+chargeSound: lasercharge
+shootSound: laserblast
+reload: 900
+chargeSoundVolume: 130
+health: 320
+category: turret
+
+shoot: {
+  shots: 2
+  firstShotDelay: 90
+}
+
+requirements: [
+  copper/150
+  lead/120
+  thorium/90
+]
+
+research: {
+  parent: "mineL"
+  requirements: [
+    copper/300
+    thorium/120
+  ]
+}
+
+ammoTypes: {
+  pyratite: {
+    type: BasicBulletType
+    speed: 0.1
+    backColor: FF9900
+    frontColor: FF9900
+    drag: -0.05
+    makeFire: true
+    damage: 100
+    lifetime: 1400
+    width: 30
+    height: 30
+    splashDamage: 75
+    splashDamageRadius: 30
+    status: burning
+    statusDuration: 1000
+    hitSound: explosionbig
+    trailColor: FF9900
+    trailChance: -1
+    trailWidth: 10
+    trailLength: 60
+    fragBullets: 90
+    fragBulletSpread: 10
+    fragBullet: {
+      type: LiquidBulletType
+      liquid: oil
+      damage: 50
+      speed: 1.2
+      puddleSize: 500
+      orbSize: 50
+      lifeTime: 50
+      fragBullets: 20
+      fragBullet: {
+        type: LiquidBulletType
+        liquid: oil
+        damage: 50
+        speed: 1.2
+        puddleSize: 7000
+        orbSize: 10
+        lifeTime: 50
+        drag: 0.001
+      }
+    }
+  }
+
+  blast-compound: {
+    type: BasicBulletType
+    speed: 0.1
+    drag: -0.05
+    damage: 100
+    lifetime: 1400
+    width: 30
+    height: 30
+    splashDamage: 230
+    splashDamageRadius: 80
+    status: blasted
+    hitSound: explosionbig
+    backColor: FF33007F
+    frontColor: FF33007F
+    trailColor: FF33007F
+    trailChance: -1
+    trailWidth: 10
+    trailLength: 60
+    fragBullets: 90
+    fragBulletSpread: 10
+    fragBullet: {
+      type: LiquidBulletType
+      liquid: cryofluid
+      damage: 50
+      speed: -0.05
+      puddleSize: 500
+      orbSize: 50
+      lifeTime: 50
+      fragBullets: 20
+      fragBullet: {
+        type: LiquidBulletType
+        liquid: cryofluid
+        damage: 50
+        speed: 1.2
+        puddleSize: 7000
+        orbSize: 50
+        drag: 0.001
+        lifeTime: 50
+      }
+    }
+  }
+
+  surge-alloy: {
+    type: BasicBulletType
+    speed: 0.1
+    drag: -0.05
+    damage: 100
+    homingRadius: 1000
+    homingPower: 0.1
+    lifetime: 1400
+    width: 30
+    height: 30
+    splashDamage: 500
+    splashDamageRadius: 56
+    status: shocked
+    hitSound: explosionbig
+    lightning: 14
+    lightningColor: "#f0d805"
+    lightningLengthRand: 9
+    lightningLength: 40
+    lightningDamage: 70
+    backColor: f0d805
+    frontColor: f0d660
+    trailColor: f0d805
+    trailChance: -1
+    trailWidth: 10
+    trailLength: 60
+    fragBullets: 90
+    fragBulletSpread: 10
+    fragBullet: {
+      type: LiquidBulletType
+      liquid: water
+      damage: 50
+      speed: 1.2
+      puddleSize: 500
+      orbSize: 50
+      lifeTime: 50
+      fragBullets: 20
+      fragBullet: {
+        type: LiquidBulletType
+        liquid: water
+        damage: 50
+        speed: 1.2
+        puddleSize: 7000
+        orbSize: 50
+        lifeTime: 50
+        drag: 0.001
+      }
+    }
+  }
+}

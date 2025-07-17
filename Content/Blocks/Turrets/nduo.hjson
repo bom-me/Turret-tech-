@@ -1,0 +1,41 @@
+name: galting
+localizedName: galt
+description: bonus
+ammoUseEffect: casing4
+requirements: [
+  copper/70
+]
+
+research: {
+  parent: Sduo
+  requirements: [
+    copper/140
+  ]
+}
+
+type: ItemTurret
+range: 300
+health: 280
+category: turret
+reload: 20
+
+ammoTypes: {
+  copper: {
+    type: BasicBulletType
+    lifetime: 400
+    speed: 4
+    hitEffect: teleportOut
+    shootEffect: shootBigColor
+    despawnEffect: none
+    despawnSound: spark
+    damage: 50
+  }
+}
+
+shoot: {
+  type: shootSpread
+  shots: 200
+  spread: 7
+  shotDelay: 3.5
+}
+shootSound: shoot

@@ -1,0 +1,96 @@
+name: "mine-Launcher"
+localizedName: mine Launcher
+description: launch cold and explosion mines
+ammoUseEffect: shootSmokeMissile
+consumes: {
+power: 5.5
+}
+
+requirements: [
+  copper/70
+]
+
+research: {
+  parent: duo
+  requirements: [
+    copper/140
+  ]
+}
+
+type: ItemTurret
+range: 374
+health: 280
+category: turret
+reload: 20
+shootSound: bigExplosion
+
+ammoTypes: {
+  blast-compound: {
+    type: ArtilleryBulletType
+    lifeTime: 375
+    shootEffect: railHit
+    smokeEffect: scatheSlash
+    smokeColor: 00ffc0
+    shootColor: 00ffc0
+    damage: 0
+    speed: 1.5
+    width: 90
+    height: 90
+    frontColor: 00ffc0
+    backColor: 00ffc0
+      fragBullets: 12
+      fragBullet: {
+      sprite: mine-bullet
+      damage: 0
+      splashDamageRadius: 200
+      splashDamage: 300
+      speed: 6
+      lifetime: 6000
+      drag: 0.05
+      width: 14
+      height: 14
+      shrinkY: 0
+      frontColor: ffffff
+      backColor: 00ffc0
+      hitEffect: scatheExplosion
+      hitColor: 00ffc0
+      status: freezing
+      statusDuration: 600
+      bulletInterval: 300
+      intervalBullets: 3
+      intervalBullet: {
+        type: LiquidBulletType
+        liquid: cryofluid
+        puddleSize: 700
+        boilTime: 600
+        lifeTime: 5
+      }
+    }
+  }
+}
+
+shoot: {
+  shots: 1
+  spread: 0
+  shotDelay: 1
+  ammoPerShot: 10
+}
+drawer: {
+  type: DrawTurret
+  basePrefix: mineL-
+    parts: [
+    {
+      type: RecoilPart
+      suffix: -mine
+      progress: recoil
+      Color: ffffff
+      colorTo: 000000
+      under: true
+    }
+    {
+     type: RegionPart
+     suffix: -fass
+     progress: recoil
+    }
+  ]
+}

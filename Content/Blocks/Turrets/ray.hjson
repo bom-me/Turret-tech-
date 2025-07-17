@@ -1,0 +1,90 @@
+name: "ray-turret"
+localizedName: ray(WARING: if you're looking info game can crush reason unknown)
+description: ray
+consumes: {
+power: 6
+}
+
+requirements: [
+  copper/70
+]
+
+research: {
+  parent: Sduo
+  requirements: [
+    copper/140
+  ]
+}
+
+type: LaserTurret
+range: 500
+health: 280
+category: turret
+reload: 800
+size: 4
+shootSound: laserbig
+chargeSound: lasercharge
+ammoUseSound: beam
+
+shoot: {
+shots: 30
+firstShotDelay: 90
+shootDelay: 100
+}
+
+ 
+ shootType: {
+      type: ContinuousLaserBulletType
+      damage: 3500
+      damageInterval: 30
+      Continuous: true
+      largeHit: true
+      width: 50
+      length: 1500
+      shake: 20
+      lifeTime: 975
+      colors: [00FFFF,00FFFF,00FFFF,ffffff]
+}
+
+drawer: {
+  type: DrawTurret
+  basePrefix: ray-
+    parts: [
+    {
+      type: RecoilPart
+      suffix: -dulo
+      progress: recoil
+      moveY: -5
+      heatColor: FFBF00
+      under: false
+    }
+    {
+    type: shapePart
+    shape: triangle
+    layer: 110
+    hollow: true
+    radius: 5
+    radiusTo: 40
+    stroke: 0
+    strokeTo: 0.9
+    rotateSpeed: 3
+    color: "00ffc0"
+    mirror: true
+    y: -50
+  },
+  {
+    type: shapePart
+    shape: triangle
+    hollow: true
+    radius: 5
+    radiusTo: 40
+    stroke: 0
+    strokeTo: 0.9
+    rotateSpeed: -3
+    color: "00ffc0"
+    layer: 110
+    mirror: true
+    y: -50
+  },
+  ]
+}

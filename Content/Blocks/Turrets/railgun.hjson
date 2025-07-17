@@ -1,0 +1,64 @@
+name: "rail-gun"
+localizedName: "Rail Gun"
+description: "cannon construction accelerating a rail projectile to a speed of 7000 km/h. Will require a lot of energy."
+
+type: ItemTurret
+category: turret
+size: 4
+health: 1500
+range: 700
+reload: 300
+shootSound: laser
+shootSoundVolume: 10
+ammoUseEffect: none
+shake: 20
+
+requirements: [
+  copper/200
+  lead/150
+  silicon/100
+]
+
+research: {
+  parent: NUKEV2
+  requirements: [
+    copper/400
+    silicon/200
+  ]
+}
+
+consumes: {
+  power: 30
+}
+
+ammoTypes: {
+  titanium: {
+    type: BasicBulletType
+    damage: 20000
+    despawnShake: 10
+    hitShake: 15
+    lifeTime: 3000
+    width: 30
+    height: 60
+    pierce: true
+    largeHit: true
+    pierceCap: 20
+    pierceBuilding: true
+    speed: 50
+    drag: 0.01
+    frontColor: ffffff
+    backColor: ffffff
+    fragBullets: 50
+    fragSpread: 36
+    fragBullet: {
+      type: BasicBulletType
+      damage: 500
+      speed: 0.5
+      pierce: true
+      drag: -0.5
+      pierceCap: 3
+      frontColor: ffffff
+      backColor: ffffff
+    }
+  }
+}

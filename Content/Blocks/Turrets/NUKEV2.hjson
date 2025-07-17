@@ -1,0 +1,59 @@
+type: ItemTurret
+name: nuke-launchV2
+localizedName: NUKE LAUNCH TURRET(VERSION 2)
+description: huge 2 version of nuke launch turrets better than 1 he launched real one nuke what explosives overpowered 
+ammoUseEffect: shootSmokeMissile
+
+size: 8
+chargeSound: lasercharge
+shootSound: laserblast
+chargeEffect: greenLaserCharge
+reload: 900
+soundVolume: 3
+range: 1000
+health: 320
+category: turret
+shootCone: 360
+rotateSpeed: 0
+
+shoot: {
+  shots: 1
+  firstShotDelay: 90
+}
+
+requirements: [
+  copper/150
+  lead/120
+  thorium/90
+]
+
+research: {
+  parent: NUKE
+  requirements: [
+    copper/300
+    thorium/120
+  ]
+}
+
+ammoTypes: {
+  nuke: {
+    spawnUnit: NM
+  }
+}
+
+drawer: {
+  type: DrawTurret
+  basePrefix: NUKEV2-
+    parts: [
+    {
+      type: RecoilPart
+      suffix: -lid
+      progress: recoil
+      moveY: -5
+      moveX: -20
+      heatColor: FFBF00
+      under: false
+      mirror: true
+    }
+  ]
+}

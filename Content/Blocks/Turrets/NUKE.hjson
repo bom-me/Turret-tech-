@@ -1,0 +1,85 @@
+type: ItemTurret
+name: nuke-launch
+localizedName: NUKE LAUNCH TURRET
+description: Launches a powerful atomic Nuke shell.
+ammoUseEffect: shootSmokeMissile
+
+size: 4
+chargeSound: lasercharge
+shootSound: laserblast
+chargeEffect: greenLaserCharge
+reload: 900
+soundVolume: 3
+range: 1000
+health: 320
+category: turret
+
+shoot: {
+  shots: 1
+  firstShotDelay: 90
+}
+
+requirements: [
+  copper/150
+  lead/120
+  thorium/90
+]
+
+research: {
+  parent: mineL
+  requirements: [
+    copper/300
+    thorium/120
+  ]
+}
+
+ammoTypes: {
+  nuke: {
+    type: ArtilleryBulletType
+    speed: 1.5
+    damage: 23000
+    lifetime: 700
+    width: 90
+    height: 90
+    sprite: missile-large
+    splashDamage: 10000
+    splashDamageRadius: 1000
+    status: melting
+    statusDuration: 3000
+    shake: 500
+    knockBack: 600
+    recoil: 600
+    hitSound: explosionbig
+    hitShake: 50
+    despawnShake: 50
+
+    despawnEffect: {
+      type: MultiEffect
+      effects: [
+        {
+          type: ParticleEffect
+          particles: 300
+          length: 1500
+          lifetime: 2000
+          sizeFrom: 40
+          sizeTo: 0
+          interp: pow5Out
+          sizeInterp: pow5In
+          colorFrom: ffa7007f
+          colorTo: ffa7007f
+          lightColor: ffa7007f
+          cone: 360
+        }
+        {
+          type: WaveEffect
+          sizeFrom: 0
+          sizeTo: 3000
+          colorFrom: ffffff
+          lightColor: ffffff
+          strokeFrom: 60
+          strokeTo: 30
+        }
+      ]
+    }
+  }
+}
