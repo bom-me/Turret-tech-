@@ -1,0 +1,14 @@
+name: nuke
+description: description not written 
+explosiveness: 10
+flammability: 9.8
+radioactivity: 10
+charge: 0.1
+color: 282875
+cost: 1
+hiddenOnPlanets: [
+    erekir
+]
+research: { 
+parent: nukeM
+}
