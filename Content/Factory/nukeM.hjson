@@ -1,0 +1,29 @@
+name: nuke-crafter
+type: GenericCrafter
+health: 1200
+size: 3
+craftTime: 240
+itemCapacity: 500
+
+consumes: {
+  items: [
+    {item: silicon, amount: 100},
+    {item: titanium, amount: 200},
+    {item: thorium, amount: 400},
+    {item: blast-compound, amount: 500}
+  ],
+  power: 8.0
+}
+
+outputs: [
+  {item: nuke, amount: 1}
+]
+
+requirements: [
+  {item: titanium, amount: 300},
+  {item: silicon, amount: 150},
+  {item: thorium, amount: 100}
+]
+
+category: crafting
+research: "graphite-press"
