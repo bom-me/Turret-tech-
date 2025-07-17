@@ -1,0 +1,91 @@
+name: nuclear-missile
+description: "Nuke"
+type: missile
+controller: MissileAI
+template: MissileUnitType
+lifetime: 750
+lowAltitude: true
+speed: 3
+flying: true
+circleTarget: true
+health: 1000
+hitSize: 20
+isEnemy: false
+allowedInPayloads: false
+playerControllable: false
+physics: false
+useUnitCap: false
+createWreck: false
+createScorch: false
+armor: 5
+rotateSpeed: 1
+itemCapacity: 0
+engineOffset: 8
+range: 120
+outlineColor: 36363c
+engineColor: A9D8FFFF
+trailColor: A9D8FFFF
+trailLength: 250
+faceTarget: true
+
+weapons: [
+  {
+    name: nuclear-explosion
+    mirror: false
+    shootOnDeath: true
+    top: true
+    x: 0
+    y: 0
+    shootY: 1
+    reload: 58
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: ExplosionBulletType
+      killShooter: true
+      damage: 40000
+      lightColor: A9D8FFFF
+      lightningColor: 66B1FFFF
+      status: melting
+      statusDuration: 10000
+      splashDamageRadius: 900
+      splashDamage: 50000   
+      despawnShake: 80
+      hitShake: 80
+      incendChance: 10
+      incendAmount: 1300
+      incendSpread: 283
+
+      despawnEffect: {
+        type: MultiEffect
+        effects: [
+          {
+            type: ParticleEffect
+            particles: 800
+            length: 2500
+            lifetime: 8000
+            sizeFrom: 60
+            sizeTo: 0
+            interp: pow5Out
+            sizeInterp: pow5In
+            colorFrom: ffa7007f
+            colorTo: ffa70000
+            lightColor: ffa700
+            cone: 360
+            startDelay: 20
+          }
+          {
+            type: WaveEffect
+            sizeFrom: 0
+            sizeTo: 3000
+            colorFrom: ffffff
+            colorTo: ffa700
+            lightColor: ffa700
+            strokeFrom: 90
+            strokeTo: 70
+          }
+        ]
+      }
+    }
+  }
+]
