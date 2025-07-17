@@ -1,0 +1,60 @@
+name: "super-duo"
+localizedName: super duo
+description: super duo like
+ammoUseEffect: casing2
+
+requirements: [
+  copper/70
+]
+
+research: {
+  parent: duo
+  requirements: [
+    copper/140
+  ]
+}
+
+type: ItemTurret
+range: 300
+health: 280
+category: turret
+reload: 20
+shootSound: malignShoot
+
+ammoTypes: {
+  copper: {
+    type: BasicBulletType
+    lifetime: 150
+    speed: 4
+    lightning: 9
+    lightningColor: "#4B0082"
+    lightningLengthRand: 4.56
+    lightningLength: 10
+    lightningDamage: 7
+    hitEffect: none
+    shootEffect: shootBigColor
+    despawnEffect: none
+    despawnSound: spark
+    frontColor: "#4B0082"
+    damage: 35
+    shootEffectColor: "#4B0082"
+    backColor: "#DA70D6"
+    bulletInterval: 80
+
+    intervalBullet: {
+      type: BasicBulletType
+      speed: 0.5
+      damage: 5.5
+      hitEffect: scatheSlash
+      backColor: "#DA70D6"
+      hitColor: "#4B0082"
+    }
+  }
+}
+
+shoot: {
+  type: ShootAlternate
+  shots: 2
+  spread: 4
+  shotDelay: 15
+}
