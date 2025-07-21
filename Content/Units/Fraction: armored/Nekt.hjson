@@ -1,0 +1,155 @@
+name: nekt(T4)
+description: "shooting big laser bullets And rays with lightning"
+type: flying
+flying: true
+health: 16000
+armor: 40
+hitSize: 55
+rotateSpeed: 5
+itemCapacity: 270
+mineRange: 100
+mineTier: 5
+buildSpeed: 30
+engineOffset: 8
+engineColor: f0d805
+
+weapons: [
+  {
+    name: Nekt-weapon1
+    mirror: false
+    rotate: false
+    range: 600
+    shootSound: beam
+    shootOnDeath: true
+    top: true
+    x: 10
+    y: 5
+    reload: 200
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 300
+      cone: 360
+      reflectTable: false
+      pierce: true
+      speed: 5
+      pierceCap: 100
+      lifetime: 750
+      width: 10
+      length: 10
+      largeHit: true
+      status: melting
+      statusDuration: 575
+      knockBack: 15
+      hitSound: explosionbig
+      despawnEffect: none
+      collidesGround: true
+      weaveMag: 10
+      weaveScale: 3
+      colors: [f0d805, f0d805, f0d805, ffffff]
+    }
+  }
+
+  {
+    name: Nekt-weapon2
+    mirror: false
+    rotate: false
+    range: 600
+    shootSound: beam
+    shootOnDeath: true
+    top: true
+    x: -10
+    y: 5
+    shootY: 1
+    reload: 200
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: ContinuousLaserBulletType
+      damage: 300
+      reflectTable: false
+      pierce: true
+      speed: 5
+      pierceCap: 100
+      lifetime: 750
+      width: 10
+      length: 10
+      largeHit: true
+      status: melting
+      statusDuration: 575
+      knockBack: 15
+      hitSound: explosionbig
+      despawnEffect: none
+      collidesGround: true
+      weaveMag: 10
+      weaveScale: 3
+      colors: [f0d805, f0d805, f0d805, ffffff]
+    }
+  }
+
+  {
+    name: Nekt-weapon3
+    mirror: false
+    range: 600
+    shootSound: laserblast
+    soundPitchMin: 0.7
+    soundPitchMax: 0.9
+    inaccuracy: 0
+    shootOnDeath: true
+    top: true
+    x: 0
+    y: 6.5
+    shootY: 1
+    shootCone: 20
+    shoots: 1
+    shotDelay: 20
+    reload: 2000
+    shootStatus: unmoving
+    statusDuration: 800
+    bullet: {
+      type: LaserBulletType
+      damage: 2750
+      lightningSpacing: 0.2
+      lightningAngleRand: 1
+      lightningDamage: 900
+      lightningLength: 70
+      lightningColor: f0d805
+      reflectTable: false
+      pierce: true
+      pierceCap: 100
+      lifetime: 700
+      width: 40
+      length: 900
+      largeHit: true
+      status: melting
+      statusDuration: 275
+      knockBack: 15
+      hitSound: explosionbig
+      despawnEffect: none
+      collidesGround: true
+      colors: [f0d805, f0d805, f0d805, ffffff]
+    }
+  }
+]
+
+abilities: [
+  {
+    type: MoveEffectAbility
+    effect: {
+      type: ParticleEffect
+      particles: 10
+      lifetime: 500
+      sizeFrom: 5
+      sizeTo: 9
+      colorFrom: ffa7007f
+      colorTo: ffa70000
+      lightColor: ffa700
+      cone: 130
+    }
+    rotation: 120
+    y: 1
+    interval: 2
+    rotateEffect: true
+  }
+]

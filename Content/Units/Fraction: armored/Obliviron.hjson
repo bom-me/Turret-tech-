@@ -1,0 +1,224 @@
+name: Obliviron(T5)
+description: "a huge destroyer armored fraction ship equipped with railgun and 2 heavy cannons and 2 geq weapons"
+type: flying
+flying: true
+health: 300000
+armor: 50
+hitSize: 140
+rotateSpeed: 1
+itemCapacity: 500
+mineRange: 100
+mineTier: 5
+buildSpeed: 75
+engineOffset: 8
+engineColor: f0d805
+speed: 0.8
+
+weapons: [
+  {
+    name: Obliviron-weapon1
+    mirror: false
+    rotate: true
+    range: 399
+    shootSound: artillery
+    shootOnDeath: true
+    top: true
+    x: -50
+    y: 12
+    reload: 200
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: BasicBulletType
+      speed: 7.5
+      lifetime: 399
+      width: 30
+      height: 80
+      sprite: missile-large
+      splashDamage: 1000
+      splashDamageRadius: 79.9
+      status: blasted
+      hitShake: 50
+      knockback: 20
+      hitSound: explosion
+      hitEffect: [mineImpact, instBomb, massiveExplosion, launch]
+      hitColor: ff8500
+      collidesGround: true
+    }
+  }
+  {
+    name: Obliviron-weapon2
+    mirror: false
+    rotate: true
+    range: 399
+    shootSound: artillery
+    shootOnDeath: true
+    top: true
+    x: 40
+    y: 12
+    shootY: 1
+    reload: 200
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: BasicBulletType
+      speed: 7.5
+      lifetime: 399
+      width: 30
+      height: 80
+      sprite: missile-large
+      splashDamage: 1000
+      splashDamageRadius: 79.9
+      status: blasted
+      hitShake: 50
+      knockback: 20
+      hitSound: explosion
+      hitEffect: [mineImpact, instBomb, massiveExplosion, launch]
+      hitColor: ff8500
+      collidesGround: true
+    }
+  }
+  {
+    name: Obliviron-weapon3
+    mirror: false
+    rotate: false
+    range: 600
+    shootSound: laserblast
+    soundPitchMin: 0.7
+    soundPitchMax: 0.9
+    inaccuracy: 0
+    shootOnDeath: true
+    top: true
+    x: 0
+    y: 8
+    shootY: 1
+    shootCone: 20
+    shoots: 1
+    shotDelay: 20
+    reload: 1200
+    shootStatus: unmoving
+    statusDuration: 800
+    bullet: {
+      type: BasicBulletType
+      damage: 20000
+      despawnShake: 10
+      hitShake: 15
+      lifeTime: 3000
+      width: 30
+      height: 80
+      pierce: true
+      largeHit: true
+      pierceCap: 20
+      pierceBuilding: true
+      speed: 170
+      drag: 0.01
+      frontColor: ffffff
+      backColor: ffffff
+      fragBullets: 50
+      fragSpread: 36
+      fragBullet: {
+        type: BasicBulletType
+        damage: 500
+        speed: 0.5
+        pierce: true
+        drag: -0.5
+        pierceCap: 3
+        frontColor: ffffff
+        backColor: ffffff
+      }
+    }
+  }
+  {
+    name: geq-weapon1forObrivirion
+    mirror: false
+    rotate: true
+    under: false
+    range: 375
+    shootSound: shootBig
+    shootOnDeath: true
+    top: true
+    x: -40
+    y: -7.5
+    reload: 750
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: ArtilleryBulletType
+      speed: 2.5
+      lifetime: 375
+      width: 30
+      shootEffect: shootTitan
+      height: 40
+      fragBullets: 1000
+      fragSpread: 10
+      fragLifeMin: 0.2
+      fragLifeMax: 3
+      fragVelocityMin: 1
+      fragVelocityMax: 2
+      fragBullet: {
+        type: ArtilleryBulletType
+        splashDamageRadius: 50.5
+        splashDamage: 75
+        speed: 1
+        height: 1
+        hitShake: 5.5
+        despawnShake: 5.5
+        width: 1
+        collidesAir: true
+        despawnEffect: [massiveExplosion, explosion, plasticExplosionFlak, generate]
+        pierce: true
+        pierceCap: 3
+        frontColor: f0d805
+        backColor: f0d805
+      }
+    }
+  }
+  {
+    name: geq-weapon2forObrivirion
+    mirror: false
+    rotate: true
+    under: false
+    range: 375
+    shootSound: shootBig
+    shootOnDeath: true
+    top: true
+    x: 60
+    y: -7.5
+    reload: 750
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: ArtilleryBulletType
+      speed: 2.5
+      lifetime: 375
+      width: 30
+      shootEffect: shootTitan
+      height: 40
+      fragBullets: 1000
+      fragSpread: 10
+      fragLifeMin: 0.2
+      fragLifeMax: 3
+      fragVelocityMin: 1
+      fragVelocityMax: 2
+      fragBullet: {
+        type: ArtilleryBulletType
+        splashDamageRadius: 50.5
+        splashDamage: 75
+        speed: 1
+        height: 1
+        hitShake: 5.5
+        despawnShake: 5.5
+        width: 1
+        collidesAir: true
+        despawnEffect: [massiveExplosion, explosion, plasticExplosionFlak, generate]
+        pierce: true
+        pierceCap: 3
+        frontColor: f0d805
+        backColor: f0d805
+      }
+    }
+  }
+]
+
+abilities: [
+]

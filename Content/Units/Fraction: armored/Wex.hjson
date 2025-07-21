@@ -1,0 +1,153 @@
+name: Wex(T2.5)
+description: "equipped with 2 medium guns bullet and heavy artillery"
+type: flying
+flying: true
+health: 4000
+armor: 20
+hitSize: 30
+rotateSpeed: 1.5
+itemCapacity: 120
+mineRange: 40
+mineTier: 5
+buildSpeed: 30
+engineOffset: 8
+engineColor: f0d805
+
+weapons: [
+  {
+    name: Wex-weapon1
+    mirror: false
+    rotate: true
+    range: 300
+    shootSound: shootBig
+    shootOnDeath: true
+    top: true
+    x: -10
+    y: 5
+    reload: 50.4
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: BasicBulletType
+      damage: 50.5
+      speed: 2
+      shootEffect: shootTitan
+      lifetime: 300
+      drag: 0.001
+      width: 30
+      height: 40
+      knockback: 5
+      weaveMag: 4
+      weaveScale: 3
+    }
+  }
+
+  {
+    name: Wex-weapon2
+    mirror: false
+    rotate: true
+    range: 300
+    shootSound: shootBig
+    shootOnDeath: true
+    top: true
+    x: 15
+    y: 5
+    shootY: 1
+    reload: 40
+    shootCone: 360
+    shoots: 1
+    bullet: {
+      type: BasicBulletType
+      damage: 50.5
+      speed: 2
+      lifetime: 300
+      drag: 0.001
+      width: 30
+      height: 40
+      shootEffect: shootTitan
+      knockback: 5
+      weaveMag: 4
+      weaveScale: 3
+    }
+  }
+
+{
+  name: Wex-weapon3
+  mirror: false
+  range: 700
+  rotate: true
+  aiming: true
+  shootSound: artillery
+  soundPitchMin: 0.7
+  soundPitchMax: 0.9
+  inaccuracy: 0
+  shootOnDeath: true
+  top: true
+  x: 2
+  y: 4
+  shootY: 1
+  shootCone: 1
+  shoots: 1
+  shotDelay: 20
+  reload: 600
+  shootStatus: slow
+  statusDuration: 300
+  bullet: {
+    type: ArtilleryBulletType
+    drag: 0
+    speed: 2.1
+    lifetime: 800
+    damage: 750
+    knockback: 15
+    width: 40
+    height: 50
+    shootEffect: shootTitan
+    hitSound: explosionbig
+    despawnSound: explosionbig
+    status: slow
+    statusDuration: 750
+    fragBullets: 25
+    fragSpread: 5
+    fragSpreadRand: 1
+    fragVelocityMax: 2.5
+    fragVelocityMin: 1
+    fragLifeMax: 50
+    fragLifeMin: 20
+    fragBullet: {
+        type: FlakBulletType
+        speed: 0.7
+        drag: 0.001
+        collidesGround: true
+        damage: 75
+        status: slow
+        statusDuration: 80
+        width: 20
+        height: 20
+        weaveScale: 5
+        weaveMag: 5
+      }
+    }
+  }
+]
+
+abilities: [
+  {
+     type: MoveLightningAbility
+     change: -1
+     maxSpeed: 2
+     minSpeed: 0.5
+     interval: 1
+     shootSound: missile
+     bullet: {
+     type: MissileBulletType
+     damage: 200
+     speed: 3
+     drag: 0.005
+     weaveMag: 5
+     weaveScale: 3
+     homingRange: 500
+     homingPower: 0.001
+     lifeTime: 200
+    }
+  }
+]
