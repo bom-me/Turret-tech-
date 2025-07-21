@@ -1,0 +1,14 @@
+name: hyper alloy
+description: description not written 
+explosiveness: 0.59
+flammability: -0.100
+radioactivity: 0.31
+charge: 0.13
+color: 282875
+cost: 3
+hiddenOnPlanets: [
+    erekir
+]
+research: { 
+parent: nuke
+}
