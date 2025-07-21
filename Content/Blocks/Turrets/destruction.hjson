@@ -1,0 +1,127 @@
+name: "desc"
+localizedName: "[red]destruction"
+description: "A gigantic railgun structure that consumes an enormous amount of energy.[red] It charges atomic-scale power to unleash a hyper-strength explosion that accelerates hyper alloy projectiles to speeds comparable to a neutron star's spin. Upon impact, it splits enemies into atoms. Due to the intense heat (up to 12000°C), the hyper alloy and explosion armor prevent melting.[white]However, the turret still requires cryo cooling due to the extreme conditions. Long cooldown required."
+type: ItemTurret
+category: turret
+size: 16
+health: 15000
+range: 1000000
+reload: 2750
+shootSound: railgun
+shootSoundVolume: 1000
+ammoUseEffect: none
+shake: 120
+moveWhileCharging: false
+
+requirements: [
+  "copper/2000"
+  "lead/1500"
+  "silicon/1000"
+  "HA/700"
+]
+
+research: {
+  parent: railgun
+  requirements: [
+    "copper/4000"
+    "silicon/2000"
+    "HA/120"
+  ]
+}
+
+consumes: {
+  power: 160
+  liquids: [
+    {liquid: cryofluid, amount: 0.79}
+  ]
+}
+
+shoot: {
+firstShotDelay: 400
+}
+ammoTypes: {
+  HA: {
+    type: PointBulletType
+    splashDamageRadius: 67.5
+    splashDamage: 20000000
+    despawnShake: 100
+    hitShake: 78
+    lifeTime: 1000
+    width: 30
+    height: 60
+    pierce: true
+    largeHit: true
+    pierceCap: 200000
+    pierceBuilding: true
+    speed: 300
+    trailSpacing: 20
+    trailEffect: [instShoot, instTrail, railHit, shootPayloadDriver]
+    smokeEffect: impactReactorExplosion
+    hitEffect: [instHit, railHit, instShoot, instBomb, launch, coreLandDust]
+    chargeEffect: {
+    type: MultiEffect
+      effects: [
+     {
+        type: "ParticleEffect"
+        length: 1400
+        baseLength: -1400
+        line: true
+        strokeFrom: 20
+        strokeTo: 0
+        particles: 30
+        lifeTime: 3000
+        interp: "pow5"
+        sizeInterp: "pow2Out"
+        colorFrom: 00FFFF
+        colorTo: 00FFFF
+        drawSize: 9000
+    }
+    {
+      type: ParticleEffect
+      particles: 300
+      length: 5000
+      baseLength: -5000
+      lifetime: 500
+      sizeFrom: 20
+      sizeTo: 0
+      interp: pow5Out
+      sizeInterp: pow5In
+      colorFrom: 00FFFF
+      colorTo: 00FFFF
+      drawSize: 9000
+      lightColor: ffa7007f
+      cone: 360
+    }
+  ]
+}
+    shootEffect: {
+      type: MultiEffect
+      effects: [
+        {
+          type: ParticleEffect
+          particles: 3000
+          length: 1300
+          lifetime: 2000
+          sizeFrom: 10
+          sizeTo: 0
+          interp: pow5Out
+          sizeInterp: pow5In
+          colorFrom: ffa7007f
+          colorTo: ffa7007f
+          lightColor: ffa7007f
+          cone: 360
+          drawSize: 10000
+        }
+        {
+          type: WaveEffect
+          sizeFrom: 0
+          sizeTo: 300
+          colorFrom: ffffff
+          lightColor: ffffff
+          strokeFrom: 60
+          strokeTo: 30
+        }
+      ]
+    }
+  }
+}

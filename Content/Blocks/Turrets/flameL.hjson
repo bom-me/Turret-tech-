@@ -1,0 +1,98 @@
+name: "flame-laser"
+localizedName: " pulse laser"
+description: "no desc"
+
+requirements: [
+  copper/70
+]
+
+research: {
+  parent: "NUKEV2"
+  requirements: [
+    copper/140
+  ]
+}
+
+type: "PowerTurret"
+range: 500
+health: 280
+category: "turret"
+reload: 375
+shootSound: "malignShoot"
+moveWhileCharging: false
+
+shoot: {
+type: shootBarrel
+barrels: [5, 5, 1, -5, 5, 1,]
+shots: 2
+firstShotDelay: 65
+}
+
+shootType: {
+  type: "PointLaserBulletType"
+  drawSize: 1750
+  sprite: FLL
+  damage: 1750
+  color: 00FFFF
+  splashDamageRadius: 35
+  splashDamage: 2750
+  chargeEffect: [lancerLaserChargeBegin, lightningCharge, landShock, pickup]
+  chargeColor: 00FFFF
+  beamEffect: {
+    type: "MultiEffect"
+    effects: [
+      {
+        type: "ParticleEffect"
+        length: 900
+        baseLength: -900
+        line: true
+        strokeFrom: 20
+        strokeTo: 0
+        particles: 20
+        lifeTime: 900
+        interp: "pow5"
+        sizeInterp: "pow2Out"
+        colorFrom: 00FFFF
+        colorTo: 00FFFF
+      }
+      {
+        type: "ParticleEffect"
+        length: 90
+        baseLength: -90
+        particles: 10
+        strokeFrom: 20
+        strokeTo: 0
+        particles: 3
+        lifeTime: 900
+        interp: "pow5"
+        sizeInterp: "pow2Out"
+        colorFrom: 00FFFF
+        colorTo: 00FFFF
+      }
+    ]
+  }
+}
+drawer: {
+  type: DrawTurret
+  basePrefix: flameL-
+    parts: [
+    {
+      type: RecoilPart
+      suffix: -cannons
+      progress: recoil
+      moveY: -10
+      heatColor: FFBF00
+      under: true
+    }
+    {
+     type: RegionPart
+     suffix: -main
+     progress: recoil
+    }
+    {
+     type: HeatPart
+     suffix: -heat
+     heatColor: FF9900
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+name: "Heavy-ray"
+localizedName: "Heavy huge ray turret"
+description: "deadly and too huge turret"
+ammoUseEffect: none
+
+consumes: {
+  power: 80
+}
+requirements: [
+ copper/600
+ surge-alloy/500
+ silicon/300
+ lead/1200
+]
+
+research: {
+  parent: ray
+  requirements: [
+ copper/600
+ surge-alloy/500
+ silicon/300
+ lead/1200
+  ]
+}
+type: "PowerTurret"
+range: 4000
+size: 16
+health: 5000
+category: "turret"
+reload: 1200
+
+shootSound: "laserblast"
+soundVolume: 330
+moveWhileCharging: false
+chargeSound: "lasercharge"
+soundPitchMax: 0.7
+soundPitchMin: 0.5
+
+shoot: {
+  type: "ShootBarrel"
+  barrels: [1, 0.2, 1, -30, 4, 1, 30, 4, 1]
+  firstShotDelay: 215
+  shots: 3
+  shotDelay: 20
+  barrelOffset: 1
+}
+
+shootType: {
+  type: "LaserBulletType"
+  damage: 37500
+  speed: 5
+  lightningSpacing: 7.5
+  lightningAngleRand: 360
+  lightningDamage: 2750
+  lightningLength: 90
+  lightningColor: "00ffc0"
+  pierce: true
+  pierceCap: 100
+  lifetime: 200
+  width: 120
+  length: 5000
+  largeHit: true
+  status: "over-shocked"
+  statusDuration: 1200
+  knockBack: 15
+  hitSound: "explosionbig"
+  despawnEffect: "none"
+  collidesGround: true
+  colors: ["00ffc0", "00ffc0", "00ffc0"]
+  shootEffect: {
+  type: "ParticleEffect"
+  particles: 30
+  line: true
+  lifetime: 750
+  length: 300
+   sizeTo: 10
+   interp: "pow5Out"
+   sizeInterp: "pow5In"
+   colorFrom: "00ffc0"
+   colorTo: "00ffc0"
+   lightColor: "00ffc0"
+   cone: 80
+   }
+  chargeEffect: {
+    type: "MultiEffect"
+    effects: [ 
+      {
+        type: "ParticleEffect"
+        particles: 30
+        lifetime: 200
+        length: -750
+        baseLength: -750
+        sizeFrom: 5
+        radiusFrom: 70
+        radiusTo: 0
+        sizeTo: 10
+        interp: "pow5Out"
+        sizeInterp: "pow5In"
+        colorFrom: "00ffc0"
+        colorTo: "00ffc0"
+        lightColor: "00ffc0"
+        cone: 360
+      }
+      {
+        type: "ParticleEffect"
+        particles: 30
+        line: true
+        lifetime: 300
+        length: -75
+        baseLength: -75
+        sizeFrom: 5
+        radiusFrom: 70
+        radiusTo: 0
+        sizeTo: 10
+        interp: "pow5Out"
+        sizeInterp: "pow5In"
+        colorFrom: "00ffc0"
+        colorTo: "00ffc0"
+        lightColor: "00ffc0"
+        cone: 360
+      } 
+      {
+        type: "WaveEffect"
+        sizeFrom: 400
+        sizeTo: 0
+        colorFrom: "00ffc0"
+        lightColor: "00ffc0"
+        strokeFrom: 10
+        strokeTo: 10
+      }
+      {
+        type: "WaveEffect"
+        sizeFrom: 700
+        sizeTo: 0
+        colorFrom: "00ffc0"
+        lightColor: "00ffc0"
+        strokeFrom: 10
+        strokeTo: 10
+      }
+      {
+        type: "WaveEffect"
+        sizeFrom: 900
+        sizeTo: 0
+        colorFrom: "00ffc0"
+        lightColor: "00ffc0"
+        strokeFrom: 40
+        strokeTo: 10
+      }
+      {
+        type: "ParticleEffect"
+        particles: 1460
+        line: true
+        lifetime: 300
+        length: -500
+        baseLength: -500
+        sizeFrom: 5
+        radiusFrom: 70
+        radiusTo: 0
+        sizeTo: 10
+        interp: "pow5Out"
+        sizeInterp: "pow5In"
+        colorFrom: "00ffc0"
+        colorTo: "00ffc0"
+        lightColor: "00ffc0"
+        cone: 360
+      } 
+    ]
+  }
+}
